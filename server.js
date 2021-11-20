@@ -7,11 +7,7 @@ const app = express()
 const dotenv = require('dotenv')
 dotenv.config()
 
-var cors_options = {
-    origin: 'http://localhost:' + process.env.PORT
-}
-
-app.use(cors(cors_options))
+app.use(cors())
 app.use(body_parser.json())
 app.use(body_parser.urlencoded({ extended: true }))
 
