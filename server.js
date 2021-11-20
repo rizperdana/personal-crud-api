@@ -13,9 +13,7 @@ app.use(body_parser.urlencoded({ extended: true }))
 
 
 const db = require('./app/models')
-db.sequelize_db.sync({ force: true }).then(() => {
-        console.log('Drop and re-sync db')
-    }) //force db to drop sinc it in development mode
+db.sequelize_db.sync({})
 
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to personal-crud API' })
